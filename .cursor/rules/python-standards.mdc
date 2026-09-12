@@ -1,0 +1,42 @@
+---
+description: Python type hints, Pydantic models, and mkdocs docstrings
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# Python types and docs
+
+- Annotate every function, method, and class attribute. Target clean Pyright / BasedPyright.
+- Model data with Pydantic (`BaseModel`, `Field`). Prefer frozen models for parsed documents (`model_config = ConfigDict(frozen=True)`).
+- Do not use untyped dicts as records or as the graph store. `dict` is only a keyed lookup (for example `dict[str, Status]` by id).
+- Use `|` unions and `X | None` instead of `Optional[X]`. Do not use `Any`.
+- Document every public module, class, and function with Google-style docstrings that `mkdocstrings` can render. Include `Args`, `Returns`, and `Raises` when they are not obvious.
+
+```python
+# ❌ BAD
+def bind(row):
+    """Map a row."""
+    return {"id": row[0], "title": row[1]}
+
+# ✅ GOOD
+class RawRecord(BaseModel):
+    """One CSV row after column mapping, before graph validation."""
+
+    id: str
+    title: str
+    status: str | None = None
+
+def bind_row(row: list[str], mapping: ColumnMap) -> RawRecord:
+    """Bind one CSV row to a `RawRecord`.
+
+    Args:
+        row: Cells in header order.
+        mapping: Column roles chosen at import.
+
+    Returns:
+        The mapped record.
+
+    Raises:
+        ValueError: If the item id cell is empty.
+    """
+```

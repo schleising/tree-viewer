@@ -1,0 +1,37 @@
+---
+description: JSDoc on JavaScript viewer code
+globs: "**/*.js"
+alwaysApply: false
+---
+
+# JavaScript docs
+
+- Document every exported function, class, and typedef with JSDoc.
+- Type public values with `@typedef`, `@param`, `@returns`, and `@type`. Prefer named typedefs that match `graph.json` over untyped object literals.
+- Mark nullable fields with `?` or `| null` so they match the JSON contract (`sourceUrl`, `subtitle`).
+- Keep comments to contracts and non-obvious behaviour. Do not restate the identifier.
+
+```javascript
+// ❌ BAD
+function colourFor(node, mode) {
+  return mode === "own" ? node.status : node.rollupStatus;
+}
+
+// ✅ GOOD
+/**
+ * @typedef {object} GraphNode
+ * @property {string} id
+ * @property {string} status
+ * @property {string} rollupStatus
+ */
+
+/**
+ * Status id used to colour a node in the current mode.
+ * @param {GraphNode} node
+ * @param {"own" | "rollup"} colorMode
+ * @returns {string}
+ */
+function statusIdForColor(node, colorMode) {
+  return colorMode === "own" ? node.status : node.rollupStatus;
+}
+```

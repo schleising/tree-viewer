@@ -1,0 +1,38 @@
+---
+description: Python errors, imports, paths, and CLI versus library boundaries
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# Python style
+
+- Never use `Any`. If Pyright cannot infer a type, narrow it or add an explicit model.
+- Use `pathlib.Path` for filesystem paths. Do not concatenate path strings.
+- No wildcard imports (`from x import *`). Import names explicitly.
+- Do not mutate function arguments. Return a new model or a copy.
+- Prefer early returns over nested `if`/`else`.
+- Raise a specific error (`ValueError`, `FileNotFoundError`, or a project exception). Never `except:` or `except Exception: pass`.
+- Library modules (`model`, `adapters`, `rollup`, …) must not `print`. The CLI prints; libraries raise or return results.
+- Tests use pytest and injected maps or fakes. Tests must not prompt on a real TTY.
+
+```python
+# ❌ BAD
+def load(path):
+    try:
+        with open(path + "/graph.json") as f:
+            return json.load(f)
+    except:
+        return {}
+
+# ✅ GOOD
+class GraphLoadError(Exception):
+    """Raised when a graph JSON file cannot be read or parsed."""
+
+def load_graph(path: Path) -> GraphDocument:
+    """Load and validate a graph document from disk."""
+    try:
+        text = path.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise GraphLoadError(f"Cannot read {path}") from exc
+    return GraphDocument.model_validate_json(text)
+```

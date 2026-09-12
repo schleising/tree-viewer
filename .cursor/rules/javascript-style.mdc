@@ -1,0 +1,32 @@
+---
+description: JavaScript language, DOM safety, and viewer state conventions
+globs: "**/*.js"
+alwaysApply: false
+---
+
+# JavaScript style
+
+- Use `const` and `let`. Never `var`. Prefer `const`.
+- Compare with `===` / `!==`. Do not use `==` except `== null` when checking nullish.
+- Treat all graph text as untrusted. Set `textContent`, never `innerHTML`, for titles, fields, and status labels.
+- Source links: only `http:` / `https:` URLs, `target="_blank"`, and `rel="noopener noreferrer"`.
+- Do not mutate the fetched graph. Keep expand / pan / zoom / colour mode in separate view state.
+- Chevron is a `<button>`. Source link is an `<a>`. Give both an accessible name.
+- If `graph.json` is missing or invalid, show the banner from the design doc. Do not render a half-built tree.
+- One concern per function. Keep layout, rendering, and event handlers in named functions.
+
+```javascript
+// ❌ BAD
+nodeEl.innerHTML = node.title;
+state.graph.nodes[0].status = "Blocked";
+if (url) link.href = url;
+
+// ✅ GOOD
+nodeEl.textContent = node.title;
+state.expanded.add(node.id);
+if (isHttpUrl(node.sourceUrl)) {
+  link.href = node.sourceUrl;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+}
+```
