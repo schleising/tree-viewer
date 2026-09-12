@@ -253,6 +253,8 @@ function bindPanZoom() {
     if (event.target.closest(".node")) {
       return;
     }
+    event.preventDefault();
+    window.getSelection()?.removeAllRanges();
     drag = { x: event.clientX, y: event.clientY };
     stage.classList.add("is-panning");
     stage.setPointerCapture(event.pointerId);

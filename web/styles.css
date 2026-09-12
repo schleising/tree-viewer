@@ -139,10 +139,13 @@ body {
   flex: 1;
   overflow: hidden;
   cursor: grab;
+  user-select: none;
 }
 
-#stage.is-panning {
+#stage.is-panning,
+#stage.is-panning * {
   cursor: grabbing;
+  user-select: none;
 }
 
 #world {
@@ -181,6 +184,7 @@ body {
   border-left: 5px solid var(--status);
   border-radius: 6px;
   box-shadow: none;
+  cursor: default;
 }
 
 .node-chevron,
@@ -204,6 +208,7 @@ body {
 .node-body {
   min-width: 0;
   flex: 1;
+  user-select: text;
 }
 
 .node-title {
@@ -260,6 +265,7 @@ body {
 .node-source {
   color: var(--focus);
   font-size: 0.75rem;
+  cursor: pointer;
 }
 
 .visually-hidden {
