@@ -30,10 +30,10 @@ python -m http.server --directory web 8000
 
 Then open http://localhost:8000
 
-- Chevron expands or collapses that node only
+- Chevron expands or collapses that node. Opening one node closes others in the same column
 - **Own status** / **Roll-up** switches colour for the whole tree
 - **Open source** opens the item URL in a new tab
-- Drag the background to pan; scroll to zoom; **Reset view** fits the current nodes
+- Drag the background to pan; scroll to zoom; **Reset view** returns to the left-aligned start
 
 ## Development
 

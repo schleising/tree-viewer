@@ -54,11 +54,11 @@ The view shows only **root** nodes: items with no incoming hierarchical link. Ev
 - A node with children shows an expand control (chevron or “+N”).
 - **Only the chevron** expands or collapses. Clicks on the node body, text, or source link do not toggle.
 - Expanding draws child nodes in the next column and orthogonal edges from parent to each child.
+- Expanding a node **closes every other expanded node in the same column** and forgets those subtrees. Only one branch is open per column.
 - Collapsing hides that subtree. Descendants that were expanded are forgotten; the next expand starts collapsed again.
-- Expanding one node does not expand siblings or cousins.
 - Nodes with no children have no expand control.
 
-This is per-node expansion, not a global accordion. Several branches can be open at once.
+This is a per-column accordion. Branches in different columns can stay open together.
 
 ### 4.3 Nodes
 
@@ -93,7 +93,7 @@ Changing mode does not change expand state. A legend lists every entry in the do
 
 - Pan by dragging the canvas background.
 - Zoom with trackpad / wheel (and optional +/− controls).
-- A “Reset view” action fits the currently visible nodes.
+- First load and **Reset view** pin the first column to the left of the stage with a small margin (zoom 1). They do not centre or scale-to-fit.
 - Optional later: search/filter by title. Not required for v1.
 
 ## 5. Canonical JSON
@@ -396,7 +396,7 @@ v1 loads data with `fetch('./graph.json')`. Serve the folder with any static ser
 
 1. Collect the visible set: all roots, plus children of every expanded node.
 2. Assign each visible node a column = one plus the maximum column of its visible parents (roots = 0). A node with several parents sits in the column after the rightmost visible parent.
-3. Pack nodes within a column to avoid overlap, using measured node height.
+3. Pack nodes within a column to avoid overlap, using measured node height. Roots stack from the top. In later columns the first child starts at the same Y as its parent so opening a lower node does not jump the next level to the top of the canvas.
 4. Draw edges as orthogonal polylines (elbow connectors) from parent to child.
 
 A node is drawn **once**. If it has multiple visible parents, several inbound edges meet that same node. Expand/collapse is keyed by node id, not by parent path.
@@ -525,6 +525,9 @@ Resolved for v1:
 6. **Status catalogue** — There is no built-in list. At import the user defines the statuses, their display labels, colours, severity order, and fallback. That catalogue is written to `graph.json` as `statuses` and reused from the map file.
 7. **Python types** — Type hints on all code. Pydantic models for data. `dict` only for fast lookups, not as a datastore.
 8. **Documentation** — Google-style Python docstrings for mkdocs / mkdocstrings. JSDoc on all viewer JavaScript.
+9. **Column accordion** — Expanding a node closes other expanded nodes in that same column.
+10. **Initial camera** — First load and Reset view pin the leftmost column to the left with a small margin, at zoom 1.
+11. **Child alignment** — The first child in the next column lines up vertically with the parent that was opened.
 
 ## 13. Future work
 

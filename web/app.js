@@ -69,6 +69,7 @@ const NODE_WIDTH = 240;
 const COLUMN_GAP = 88;
 const ROW_GAP = 20;
 const PADDING = 48;
+const VIEW_MARGIN = 24;
 const MIN_ZOOM = 0.3;
 const MAX_ZOOM = 2.4;
 
@@ -95,7 +96,7 @@ async function main() {
     graph = loaded;
     applyDocumentChrome(loaded);
     render();
-    fitView();
+    pinViewToLeft();
   } catch (error) {
     const message = error instanceof Error ? error.message : "Could not load graph.json";
     showBanner(message);
@@ -229,7 +230,7 @@ function bindToolbar() {
     zoomOut.addEventListener("click", () => adjustZoom(1 / 1.15));
   }
   if (zoomReset) {
-    zoomReset.addEventListener("click", () => fitView());
+    zoomReset.addEventListener("click", () => pinViewToLeft());
   }
 }
 
@@ -324,17 +325,7 @@ function render() {
       .filter((node) => visible.has(node.id) && columns.get(node.id) === column)
       .map((node) => node.id)
       .sort((left, right) => compareInColumn(left, right, graph, layout, byId));
-    let y = PADDING;
-    for (const id of ids) {
-      const element = elements.get(id);
-      if (!element) {
-        continue;
-      }
-      const height = element.offsetHeight;
-      const x = PADDING + column * (NODE_WIDTH + COLUMN_GAP);
-      layout.set(id, { id, column, x, y, width: NODE_WIDTH, height });
-      y += height + ROW_GAP;
-    }
+    packColumn(column, ids, elements, layout, graph);
   }
 
   let contentWidth = PADDING;
@@ -485,6 +476,7 @@ function statusForColor(node, document, colorMode) {
 
 /**
  * Expand or collapse a node. Collapse forgets descendant expand state.
+ * Expanding also collapses every other open node in the same column.
  * @param {string} nodeId
  * @returns {void}
  */
@@ -493,14 +485,50 @@ function toggleExpanded(nodeId) {
     return;
   }
   if (state.expanded.has(nodeId)) {
-    state.expanded.delete(nodeId);
-    for (const descendant of descendantIds(graph, nodeId)) {
-      state.expanded.delete(descendant);
-    }
+    collapseNode(nodeId);
   } else {
+    collapseOthersInColumn(nodeId);
     state.expanded.add(nodeId);
   }
   render();
+}
+
+/**
+ * Remove `nodeId` and all of its descendants from the expanded set.
+ * @param {string} nodeId
+ * @returns {void}
+ */
+function collapseNode(nodeId) {
+  if (!graph) {
+    return;
+  }
+  state.expanded.delete(nodeId);
+  for (const descendant of descendantIds(graph, nodeId)) {
+    state.expanded.delete(descendant);
+  }
+}
+
+/**
+ * Close other expanded nodes that sit in the same layout column as `nodeId`.
+ * @param {string} nodeId
+ * @returns {void}
+ */
+function collapseOthersInColumn(nodeId) {
+  if (!graph) {
+    return;
+  }
+  const visible = visibleNodeIds(graph, state.expanded);
+  const columns = assignColumns(graph, visible);
+  const column = columns.get(nodeId);
+  if (column === undefined) {
+    return;
+  }
+  for (const otherId of [...state.expanded]) {
+    if (otherId === nodeId || columns.get(otherId) !== column) {
+      continue;
+    }
+    collapseNode(otherId);
+  }
 }
 
 /**
@@ -573,6 +601,67 @@ function assignColumns(document, visible) {
     }
   }
   return columns;
+}
+
+/**
+ * Stack nodes in one column. Roots start at the top. Later columns start
+ * at the parent node's Y so the first child lines up with the opened node.
+ * @param {number} column
+ * @param {string[]} ids
+ * @param {Map<string, HTMLElement>} elements
+ * @param {Map<string, LayoutNode>} layout
+ * @param {GraphDocument} document
+ * @returns {void}
+ */
+function packColumn(column, ids, elements, layout, document) {
+  let y = PADDING;
+  /** @type {string | null} */
+  let activeParent = null;
+  for (const id of ids) {
+    const element = elements.get(id);
+    if (!element) {
+      continue;
+    }
+    const parentId = primaryLayoutParent(id, document, layout);
+    if (column > 0 && parentId !== null && parentId !== activeParent) {
+      const parent = layout.get(parentId);
+      if (parent) {
+        y = Math.max(y, parent.y);
+      }
+      activeParent = parentId;
+    }
+    const height = element.offsetHeight;
+    const x = PADDING + column * (NODE_WIDTH + COLUMN_GAP);
+    layout.set(id, { id, column, x, y, width: NODE_WIDTH, height });
+    y += height + ROW_GAP;
+  }
+}
+
+/**
+ * Visible parent already placed, preferring the rightmost (nearest) column.
+ * @param {string} nodeId
+ * @param {GraphDocument} document
+ * @param {Map<string, LayoutNode>} layout
+ * @returns {string | null}
+ */
+function primaryLayoutParent(nodeId, document, layout) {
+  /** @type {string | null} */
+  let bestId = null;
+  let bestColumn = -1;
+  for (const link of document.links) {
+    if (link.to !== nodeId) {
+      continue;
+    }
+    const parent = layout.get(link.from);
+    if (!parent) {
+      continue;
+    }
+    if (parent.column > bestColumn) {
+      bestColumn = parent.column;
+      bestId = link.from;
+    }
+  }
+  return bestId;
 }
 
 /**
@@ -754,22 +843,13 @@ function adjustZoom(factor) {
 }
 
 /**
- * Fit the current layout into the stage.
+ * Place the first column at the left of the stage with a small margin.
  * @returns {void}
  */
-function fitView() {
-  const stage = documentElement("stage");
-  const nodesLayer = documentElement("nodes");
-  if (!(stage instanceof HTMLElement) || !(nodesLayer instanceof HTMLElement)) {
-    return;
-  }
-  const width = Math.max(nodesLayer.offsetWidth, 1);
-  const height = Math.max(nodesLayer.offsetHeight, 1);
-  const rect = stage.getBoundingClientRect();
-  const zoom = clamp(Math.min(rect.width / width, rect.height / height) * 0.92, MIN_ZOOM, MAX_ZOOM);
-  state.zoom = zoom;
-  state.pan.x = (rect.width - width * zoom) / 2;
-  state.pan.y = (rect.height - height * zoom) / 2;
+function pinViewToLeft() {
+  state.zoom = 1;
+  state.pan.x = VIEW_MARGIN - PADDING;
+  state.pan.y = VIEW_MARGIN - PADDING;
   applyWorldTransform();
 }
 
