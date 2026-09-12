@@ -370,9 +370,9 @@ JsonWriter.write()
 | Custom roll-up | Implement `RollupStrategy` (`worst_wins` is the default). Select with `--rollup worst_wins`. |
 | Status catalogues | Defined at import and stored in `graph.json`. Reuse via the map file; a different source gets a different list. |
 
-`RawRecord` is a typed dict: `{ id, title, subtitle?, status?, parent_ids?, source_url?, data }`. Adapters must produce that shape; they must not write JSON themselves.
+`RawRecord` is a Pydantic model (`id`, `title`, optional `subtitle` / `status` / `parent_ids` / `source_url`, plus `data` as `list[DataField]`). Adapters must produce that model; they must not write JSON themselves.
 
-Keep v1 on the standard library (`csv`, `json`, `argparse`, `dataclasses`). Add Pydantic or a schema package only if validation becomes painful.
+Use Pydantic for every document, mapping, and pipeline type. `dict` is only for keyed lookups (for example status-by-id during roll-up), not as a record store. CSV and JSON stay on the standard library. Public Python APIs use Google-style docstrings so `mkdocstrings` can publish them. Viewer JavaScript uses JSDoc typedefs that match this JSON contract.
 
 ## 8. Viewer design
 
@@ -388,7 +388,7 @@ web/
   graph.json          # produced by the converter; gitignored or example-only
 ```
 
-v1 loads data with `fetch('./graph.json')`. Serve the folder with any static server (`python -m http.server`). Opening `index.html` via `file://` will not work.
+v1 loads data with `fetch('./graph.json')`. Serve the folder with any static server (`python -m http.server`). Opening `index.html` via `file://` will not work. Document `app.js` with JSDoc typedefs that match the JSON in §5.
 
 ### 8.2 Layout model
 
@@ -459,6 +459,7 @@ The viewer does not validate the URL beyond what the converter already stored.
 ```
 tree-viewer/
   docs/DESIGN.md
+  mkdocs.yml
   README.md
   LICENSE
   pyproject.toml
@@ -466,7 +467,7 @@ tree-viewer/
     __init__.py
     __main__.py          # python -m treeviewer
     cli.py
-    model.py             # dataclasses for GraphDocument
+    model.py             # Pydantic models for GraphDocument
     adapters/
       base.py
       csv_adapter.py
@@ -494,7 +495,7 @@ tree-viewer/
 
 ## 10. Implementation sequence
 
-1. **JSON schema + dataclasses** — `model.py` and a golden `examples/simple/graph.json`.
+1. **JSON schema + Pydantic models** — `model.py` and a golden `examples/simple/graph.json`.
 2. **CSV adapter + column mapping** — interactive prompts (including the status catalogue), `--map` / `--save-map`, unit tests with a saved map (no TTY).
 3. **Validation + roll-up** — cycles, dangling parents, worst-wins on trees and a small DAG; golden values in the example JSON.
 4. **Static viewer** — fetch JSON, render root nodes, chevron expand/collapse, single node with multiple inbound edges, own vs roll-up toggle, source links, pan/zoom.
@@ -522,6 +523,8 @@ Resolved for v1:
 4. **How the viewer loads data** — `fetch('./graph.json')` from a static server. No embed-in-HTML path in v1.
 5. **Which extra fields appear on a node** — The user chooses the data columns during CSV import. Those names are stored in `meta.displayFields`.
 6. **Status catalogue** — There is no built-in list. At import the user defines the statuses, their display labels, colours, severity order, and fallback. That catalogue is written to `graph.json` as `statuses` and reused from the map file.
+7. **Python types** — Type hints on all code. Pydantic models for data. `dict` only for fast lookups, not as a datastore.
+8. **Documentation** — Google-style Python docstrings for mkdocs / mkdocstrings. JSDoc on all viewer JavaScript.
 
 ## 13. Future work
 
