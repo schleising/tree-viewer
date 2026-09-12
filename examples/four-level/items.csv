@@ -1,0 +1,74 @@
+Key,Summary,Status,Parent,Owner,Updated,URL
+PLAT,Platform programme,In Progress,,Sam Reed,2026-08-01,https://jira.example.com/browse/PLAT
+MOB,Mobile programme,To Do,,Priya Shah,2026-08-01,https://jira.example.com/browse/MOB
+DATA,Data programme,Blocked,,Chris Ng,2026-08-01,https://jira.example.com/browse/DATA
+SEC,Security programme,In Progress,,Morgan Lee,2026-08-01,https://jira.example.com/browse/SEC
+PLAT-WS-API,API workstream,In Progress,PLAT,Alex Ortiz,2026-08-04,https://jira.example.com/browse/PLAT-WS-API
+PLAT-WS-WEB,Web workstream,To Do,PLAT,Alex Ortiz,2026-08-04,https://jira.example.com/browse/PLAT-WS-WEB
+MOB-WS-IOS,iOS workstream,In Progress,MOB,Jamie Cole,2026-08-05,https://jira.example.com/browse/MOB-WS-IOS
+MOB-WS-AND,Android workstream,To Do,MOB,Jamie Cole,2026-08-05,https://jira.example.com/browse/MOB-WS-AND
+DATA-WS-PIPE,Pipelines workstream,Blocked,DATA,Riley Chen,2026-08-06,https://jira.example.com/browse/DATA-WS-PIPE
+DATA-WS-BI,Analytics workstream,To Do,DATA,Riley Chen,2026-08-06,https://jira.example.com/browse/DATA-WS-BI
+SEC-WS-ID,Identity workstream,In Progress,SEC,Dana Okonkwo,2026-08-07,https://jira.example.com/browse/SEC-WS-ID
+SEC-WS-COMP,Compliance workstream,Blocked,SEC,Dana Okonkwo,2026-08-07,https://jira.example.com/browse/SEC-WS-COMP
+PLAT-E-AUTH,Authentication epic,Blocked,PLAT-WS-API,Alex Ortiz,2026-08-12,https://jira.example.com/browse/PLAT-E-AUTH
+PLAT-E-GATE,API gateway epic,In Progress,PLAT-WS-API,Alex Ortiz,2026-08-12,https://jira.example.com/browse/PLAT-E-GATE
+PLAT-E-PORT,Customer portal epic,To Do,PLAT-WS-WEB,Nina Patel,2026-08-13,https://jira.example.com/browse/PLAT-E-PORT
+PLAT-E-A11Y,Accessibility epic,Done,PLAT-WS-WEB,Nina Patel,2026-08-13,https://jira.example.com/browse/PLAT-E-A11Y
+MOB-E-LOGIN,Mobile login epic,In Progress,MOB-WS-IOS,Jamie Cole,2026-08-14,https://jira.example.com/browse/MOB-E-LOGIN
+MOB-E-PUSH,Push notifications epic,To Do,MOB-WS-IOS,Jamie Cole,2026-08-14,https://jira.example.com/browse/MOB-E-PUSH
+MOB-E-SYNC,Offline sync epic,Blocked,MOB-WS-AND,Taylor Brooks,2026-08-15,https://jira.example.com/browse/MOB-E-SYNC
+MOB-E-UI,Android UI kit epic,To Do,MOB-WS-AND,Taylor Brooks,2026-08-15,https://jira.example.com/browse/MOB-E-UI
+DATA-E-ING,Ingest epic,Blocked,DATA-WS-PIPE,Riley Chen,2026-08-16,https://jira.example.com/browse/DATA-E-ING
+DATA-E-ETL,Transform epic,In Progress,DATA-WS-PIPE,Riley Chen,2026-08-16,https://jira.example.com/browse/DATA-E-ETL
+DATA-E-RPT,Reporting epic,To Do,DATA-WS-BI,Quinn Alvarez,2026-08-17,https://jira.example.com/browse/DATA-E-RPT
+DATA-E-ML,Scoring models epic,To Do,DATA-WS-BI,Quinn Alvarez,2026-08-17,https://jira.example.com/browse/DATA-E-ML
+SEC-E-RBAC,RBAC epic,In Progress,SEC-WS-ID,Dana Okonkwo,2026-08-18,https://jira.example.com/browse/SEC-E-RBAC
+SEC-E-AUDIT,Audit trail epic,To Do,SEC-WS-ID,Dana Okonkwo,2026-08-18,https://jira.example.com/browse/SEC-E-AUDIT
+SEC-E-SOC,SOC 2 epic,Blocked,SEC-WS-COMP,Harper Diaz,2026-08-19,https://jira.example.com/browse/SEC-E-SOC
+SEC-E-PEN,Penetration tests epic,In Progress,SEC-WS-COMP,Harper Diaz,2026-08-19,https://jira.example.com/browse/SEC-E-PEN
+PLAT-S-OAUTH,OAuth token service,Blocked,PLAT-E-AUTH,Alex Ortiz,2026-09-01,https://jira.example.com/browse/PLAT-S-OAUTH
+PLAT-S-SAML,SAML identity provider,In Progress,PLAT-E-AUTH,Alex Ortiz,2026-09-01,https://jira.example.com/browse/PLAT-S-SAML
+PLAT-S-MFA,Multi-factor challenge,To Do,PLAT-E-AUTH;SEC-E-RBAC,Dana Okonkwo,2026-09-02,https://jira.example.com/browse/PLAT-S-MFA
+PLAT-S-RATE,Gateway rate limits,Done,PLAT-E-GATE,Alex Ortiz,2026-09-02,https://jira.example.com/browse/PLAT-S-RATE
+PLAT-S-ROUT,Request routing rules,In Progress,PLAT-E-GATE,Alex Ortiz,2026-09-03,https://jira.example.com/browse/PLAT-S-ROUT
+PLAT-S-RETRY,Idempotent retries,To Do,PLAT-E-GATE,Alex Ortiz,2026-09-03,https://jira.example.com/browse/PLAT-S-RETRY
+PLAT-S-DASH,Portal dashboard,To Do,PLAT-E-PORT,Nina Patel,2026-09-04,https://jira.example.com/browse/PLAT-S-DASH
+PLAT-S-NAV,Portal navigation,Done,PLAT-E-PORT,Nina Patel,2026-09-04,https://jira.example.com/browse/PLAT-S-NAV
+PLAT-S-PROF,Account profile,To Do,PLAT-E-PORT,Nina Patel,2026-09-05,https://jira.example.com/browse/PLAT-S-PROF
+PLAT-S-A11Y-KBD,Keyboard paths,Done,PLAT-E-A11Y,Nina Patel,2026-09-05,https://jira.example.com/browse/PLAT-S-A11Y-KBD
+PLAT-S-A11Y-SR,Screen reader labels,Done,PLAT-E-A11Y,Nina Patel,2026-09-06,https://jira.example.com/browse/PLAT-S-A11Y-SR
+MOB-S-BIO,iOS biometrics,Done,MOB-E-LOGIN,Jamie Cole,2026-09-06,https://jira.example.com/browse/MOB-S-BIO
+MOB-S-SSO,Mobile SSO,In Progress,MOB-E-LOGIN;PLAT-E-AUTH,Jamie Cole,2026-09-07,https://jira.example.com/browse/MOB-S-SSO
+MOB-S-SESS,Session refresh,To Do,MOB-E-LOGIN,Jamie Cole,2026-09-07,https://jira.example.com/browse/MOB-S-SESS
+MOB-S-APNS,APNS delivery,To Do,MOB-E-PUSH,Jamie Cole,2026-09-08,https://jira.example.com/browse/MOB-S-APNS
+MOB-S-FCM,FCM delivery,To Do,MOB-E-PUSH;MOB-E-UI,Taylor Brooks,2026-09-08,https://jira.example.com/browse/MOB-S-FCM
+MOB-S-PREF,Notification preferences,To Do,MOB-E-PUSH,Jamie Cole,2026-09-09,https://jira.example.com/browse/MOB-S-PREF
+MOB-S-OFF,Offline queue,Blocked,MOB-E-SYNC,Taylor Brooks,2026-09-09,https://jira.example.com/browse/MOB-S-OFF
+MOB-S-CONF,Conflict resolution,To Do,MOB-E-SYNC,Taylor Brooks,2026-09-10,https://jira.example.com/browse/MOB-S-CONF
+MOB-S-DELTA,Delta sync,Blocked,MOB-E-SYNC;DATA-E-ING,Riley Chen,2026-09-10,https://jira.example.com/browse/MOB-S-DELTA
+MOB-S-THEME,Theme tokens,To Do,MOB-E-UI,Taylor Brooks,2026-09-11,https://jira.example.com/browse/MOB-S-THEME
+MOB-S-COMP,Shared components,In Progress,MOB-E-UI,Taylor Brooks,2026-09-11,https://jira.example.com/browse/MOB-S-COMP
+DATA-S-KAF,Kafka ingest,Blocked,DATA-E-ING,Riley Chen,2026-09-01,https://jira.example.com/browse/DATA-S-KAF
+DATA-S-S3,S3 landing zone,In Progress,DATA-E-ING,Riley Chen,2026-09-01,https://jira.example.com/browse/DATA-S-S3
+DATA-S-SCHEMA,Schema registry,To Do,DATA-E-ING,Riley Chen,2026-09-02,https://jira.example.com/browse/DATA-S-SCHEMA
+DATA-S-DBT,dbt models,In Progress,DATA-E-ETL,Riley Chen,2026-09-02,https://jira.example.com/browse/DATA-S-DBT
+DATA-S-QUAL,Data quality checks,To Do,DATA-E-ETL;SEC-E-AUDIT,Quinn Alvarez,2026-09-03,https://jira.example.com/browse/DATA-S-QUAL
+DATA-S-LINEAGE,Column lineage,To Do,DATA-E-ETL,Quinn Alvarez,2026-09-03,https://jira.example.com/browse/DATA-S-LINEAGE
+DATA-S-FIN,Finance pack,To Do,DATA-E-RPT,Quinn Alvarez,2026-09-04,https://jira.example.com/browse/DATA-S-FIN
+DATA-S-OPS,Ops pack,Done,DATA-E-RPT,Quinn Alvarez,2026-09-04,https://jira.example.com/browse/DATA-S-OPS
+DATA-S-EXEC,Exec scorecard,To Do,DATA-E-RPT;DATA-E-ML,Quinn Alvarez,2026-09-05,https://jira.example.com/browse/DATA-S-EXEC
+DATA-S-FEAT,Feature store,To Do,DATA-E-ML,Quinn Alvarez,2026-09-05,https://jira.example.com/browse/DATA-S-FEAT
+DATA-S-SCORE,Risk scores,To Do,DATA-E-ML;SEC-E-SOC,Harper Diaz,2026-09-06,https://jira.example.com/browse/DATA-S-SCORE
+SEC-S-ROLE,Role catalogue,Done,SEC-E-RBAC,Dana Okonkwo,2026-09-06,https://jira.example.com/browse/SEC-S-ROLE
+SEC-S-POL,Access policies,In Progress,SEC-E-RBAC,Dana Okonkwo,2026-09-07,https://jira.example.com/browse/SEC-S-POL
+SEC-S-GRANT,Grant workflow,To Do,SEC-E-RBAC,Dana Okonkwo,2026-09-07,https://jira.example.com/browse/SEC-S-GRANT
+SEC-S-LOG,Immutable logs,To Do,SEC-E-AUDIT,Dana Okonkwo,2026-09-08,https://jira.example.com/browse/SEC-S-LOG
+SEC-S-SIEM,SIEM export,To Do,SEC-E-AUDIT;DATA-E-RPT,Quinn Alvarez,2026-09-08,https://jira.example.com/browse/SEC-S-SIEM
+SEC-S-RET,Retention rules,To Do,SEC-E-AUDIT,Dana Okonkwo,2026-09-09,https://jira.example.com/browse/SEC-S-RET
+SEC-S-CTRL,Control mapping,Blocked,SEC-E-SOC,Harper Diaz,2026-09-09,https://jira.example.com/browse/SEC-S-CTRL
+SEC-S-EVID,Evidence locker,To Do,SEC-E-SOC,Harper Diaz,2026-09-10,https://jira.example.com/browse/SEC-S-EVID
+SEC-S-SCOPE,Audit scope,Blocked,SEC-E-SOC,Harper Diaz,2026-09-10,https://jira.example.com/browse/SEC-S-SCOPE
+SEC-S-SCAN,External scan,In Progress,SEC-E-PEN,Harper Diaz,2026-09-11,https://jira.example.com/browse/SEC-S-SCAN
+SEC-S-WEB,Web app test,In Progress,SEC-E-PEN;PLAT-E-PORT,Nina Patel,2026-09-11,https://jira.example.com/browse/SEC-S-WEB
+SEC-S-API,API abuse test,To Do,SEC-E-PEN;PLAT-E-GATE,Alex Ortiz,2026-09-12,https://jira.example.com/browse/SEC-S-API
