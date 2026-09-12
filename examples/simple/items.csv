@@ -1,0 +1,6 @@
+Key,Summary,Status,Parent,Owner,Updated,URL
+root,Programme,In Progress,,Sam,2026-09-01,https://jira.example.com/browse/PROG-1
+a,Workstream A,Done,root,Alex,2026-09-02,https://jira.example.com/browse/WS-A
+b,Workstream B,Blocked,root,Jo,2026-09-03,https://jira.example.com/browse/WS-B
+b1,Vendor,Blocked,b,Jo,2026-09-04,https://jira.example.com/browse/VEN-1
+shared,Shared service,To Do,a;b,Sam,2026-09-05,https://jira.example.com/browse/SHR-1

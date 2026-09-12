@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "1.0",
+  "meta": {
+    "title": "Simple tree",
+    "description": "",
+    "defaultColorMode": "own",
+    "displayFields": [
+      "Owner",
+      "Updated"
+    ]
+  },
+  "statuses": [
+    {
+      "id": "Done",
+      "label": "Done",
+      "color": "#2e7d32",
+      "severity": 0
+    },
+    {
+      "id": "To Do",
+      "label": "To Do",
+      "color": "#1565c0",
+      "severity": 1
+    },
+    {
+      "id": "In Progress",
+      "label": "In Progress",
+      "color": "#f9a825",
+      "severity": 2
+    },
+    {
+      "id": "Blocked",
+      "label": "Blocked",
+      "color": "#c62828",
+      "severity": 3
+    }
+  ],
+  "nodes": [
+    {
+      "id": "root",
+      "title": "Programme",
+      "subtitle": "root",
+      "status": "In Progress",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/PROG-1",
+      "data": {
+        "Owner": "Sam",
+        "Updated": "2026-09-01"
+      },
+      "childIds": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "a",
+      "title": "Workstream A",
+      "subtitle": "a",
+      "status": "Done",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/WS-A",
+      "data": {
+        "Owner": "Alex",
+        "Updated": "2026-09-02"
+      },
+      "childIds": [
+        "shared"
+      ]
+    },
+    {
+      "id": "b",
+      "title": "Workstream B",
+      "subtitle": "b",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/WS-B",
+      "data": {
+        "Owner": "Jo",
+        "Updated": "2026-09-03"
+      },
+      "childIds": [
+        "b1",
+        "shared"
+      ]
+    },
+    {
+      "id": "b1",
+      "title": "Vendor",
+      "subtitle": "b1",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/VEN-1",
+      "data": {
+        "Owner": "Jo",
+        "Updated": "2026-09-04"
+      },
+      "childIds": []
+    },
+    {
+      "id": "shared",
+      "title": "Shared service",
+      "subtitle": "shared",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/SHR-1",
+      "data": {
+        "Owner": "Sam",
+        "Updated": "2026-09-05"
+      },
+      "childIds": []
+    }
+  ],
+  "links": [
+    {
+      "from": "root",
+      "to": "a"
+    },
+    {
+      "from": "root",
+      "to": "b"
+    },
+    {
+      "from": "b",
+      "to": "b1"
+    },
+    {
+      "from": "a",
+      "to": "shared"
+    },
+    {
+      "from": "b",
+      "to": "shared"
+    }
+  ]
+}

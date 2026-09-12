@@ -1,0 +1,1414 @@
+{
+  "schemaVersion": "1.0",
+  "meta": {
+    "title": "Delivery programmes",
+    "description": "Four-level example with shared child links",
+    "defaultColorMode": "own",
+    "displayFields": [
+      "Owner",
+      "Updated"
+    ]
+  },
+  "statuses": [
+    {
+      "id": "Done",
+      "label": "Done",
+      "color": "#2e7d32",
+      "severity": 0
+    },
+    {
+      "id": "To Do",
+      "label": "To Do",
+      "color": "#1565c0",
+      "severity": 1
+    },
+    {
+      "id": "In Progress",
+      "label": "In Progress",
+      "color": "#f9a825",
+      "severity": 2
+    },
+    {
+      "id": "Blocked",
+      "label": "Blocked",
+      "color": "#c62828",
+      "severity": 3
+    }
+  ],
+  "nodes": [
+    {
+      "id": "PLAT",
+      "title": "Platform programme",
+      "subtitle": "PLAT",
+      "status": "In Progress",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/PLAT",
+      "data": {
+        "Owner": "Sam Reed",
+        "Updated": "2026-08-01"
+      },
+      "childIds": [
+        "PLAT-WS-API",
+        "PLAT-WS-WEB"
+      ]
+    },
+    {
+      "id": "MOB",
+      "title": "Mobile programme",
+      "subtitle": "MOB",
+      "status": "To Do",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/MOB",
+      "data": {
+        "Owner": "Priya Shah",
+        "Updated": "2026-08-01"
+      },
+      "childIds": [
+        "MOB-WS-IOS",
+        "MOB-WS-AND"
+      ]
+    },
+    {
+      "id": "DATA",
+      "title": "Data programme",
+      "subtitle": "DATA",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/DATA",
+      "data": {
+        "Owner": "Chris Ng",
+        "Updated": "2026-08-01"
+      },
+      "childIds": [
+        "DATA-WS-PIPE",
+        "DATA-WS-BI"
+      ]
+    },
+    {
+      "id": "SEC",
+      "title": "Security programme",
+      "subtitle": "SEC",
+      "status": "In Progress",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/SEC",
+      "data": {
+        "Owner": "Morgan Lee",
+        "Updated": "2026-08-01"
+      },
+      "childIds": [
+        "SEC-WS-ID",
+        "SEC-WS-COMP"
+      ]
+    },
+    {
+      "id": "PLAT-WS-API",
+      "title": "API workstream",
+      "subtitle": "PLAT-WS-API",
+      "status": "In Progress",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-WS-API",
+      "data": {
+        "Owner": "Alex Ortiz",
+        "Updated": "2026-08-04"
+      },
+      "childIds": [
+        "PLAT-E-AUTH",
+        "PLAT-E-GATE"
+      ]
+    },
+    {
+      "id": "PLAT-WS-WEB",
+      "title": "Web workstream",
+      "subtitle": "PLAT-WS-WEB",
+      "status": "To Do",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-WS-WEB",
+      "data": {
+        "Owner": "Alex Ortiz",
+        "Updated": "2026-08-04"
+      },
+      "childIds": [
+        "PLAT-E-PORT",
+        "PLAT-E-A11Y"
+      ]
+    },
+    {
+      "id": "MOB-WS-IOS",
+      "title": "iOS workstream",
+      "subtitle": "MOB-WS-IOS",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/MOB-WS-IOS",
+      "data": {
+        "Owner": "Jamie Cole",
+        "Updated": "2026-08-05"
+      },
+      "childIds": [
+        "MOB-E-LOGIN",
+        "MOB-E-PUSH"
+      ]
+    },
+    {
+      "id": "MOB-WS-AND",
+      "title": "Android workstream",
+      "subtitle": "MOB-WS-AND",
+      "status": "To Do",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/MOB-WS-AND",
+      "data": {
+        "Owner": "Jamie Cole",
+        "Updated": "2026-08-05"
+      },
+      "childIds": [
+        "MOB-E-SYNC",
+        "MOB-E-UI"
+      ]
+    },
+    {
+      "id": "DATA-WS-PIPE",
+      "title": "Pipelines workstream",
+      "subtitle": "DATA-WS-PIPE",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/DATA-WS-PIPE",
+      "data": {
+        "Owner": "Riley Chen",
+        "Updated": "2026-08-06"
+      },
+      "childIds": [
+        "DATA-E-ING",
+        "DATA-E-ETL"
+      ]
+    },
+    {
+      "id": "DATA-WS-BI",
+      "title": "Analytics workstream",
+      "subtitle": "DATA-WS-BI",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/DATA-WS-BI",
+      "data": {
+        "Owner": "Riley Chen",
+        "Updated": "2026-08-06"
+      },
+      "childIds": [
+        "DATA-E-RPT",
+        "DATA-E-ML"
+      ]
+    },
+    {
+      "id": "SEC-WS-ID",
+      "title": "Identity workstream",
+      "subtitle": "SEC-WS-ID",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/SEC-WS-ID",
+      "data": {
+        "Owner": "Dana Okonkwo",
+        "Updated": "2026-08-07"
+      },
+      "childIds": [
+        "SEC-E-RBAC",
+        "SEC-E-AUDIT"
+      ]
+    },
+    {
+      "id": "SEC-WS-COMP",
+      "title": "Compliance workstream",
+      "subtitle": "SEC-WS-COMP",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/SEC-WS-COMP",
+      "data": {
+        "Owner": "Dana Okonkwo",
+        "Updated": "2026-08-07"
+      },
+      "childIds": [
+        "SEC-E-SOC",
+        "SEC-E-PEN"
+      ]
+    },
+    {
+      "id": "PLAT-E-AUTH",
+      "title": "Authentication epic",
+      "subtitle": "PLAT-E-AUTH",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-E-AUTH",
+      "data": {
+        "Owner": "Alex Ortiz",
+        "Updated": "2026-08-12"
+      },
+      "childIds": [
+        "PLAT-S-OAUTH",
+        "PLAT-S-SAML",
+        "PLAT-S-MFA",
+        "MOB-S-SSO"
+      ]
+    },
+    {
+      "id": "PLAT-E-GATE",
+      "title": "API gateway epic",
+      "subtitle": "PLAT-E-GATE",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-E-GATE",
+      "data": {
+        "Owner": "Alex Ortiz",
+        "Updated": "2026-08-12"
+      },
+      "childIds": [
+        "PLAT-S-RATE",
+        "PLAT-S-ROUT",
+        "PLAT-S-RETRY",
+        "SEC-S-API"
+      ]
+    },
+    {
+      "id": "PLAT-E-PORT",
+      "title": "Customer portal epic",
+      "subtitle": "PLAT-E-PORT",
+      "status": "To Do",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-E-PORT",
+      "data": {
+        "Owner": "Nina Patel",
+        "Updated": "2026-08-13"
+      },
+      "childIds": [
+        "PLAT-S-DASH",
+        "PLAT-S-NAV",
+        "PLAT-S-PROF",
+        "SEC-S-WEB"
+      ]
+    },
+    {
+      "id": "PLAT-E-A11Y",
+      "title": "Accessibility epic",
+      "subtitle": "PLAT-E-A11Y",
+      "status": "Done",
+      "rollupStatus": "Done",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-E-A11Y",
+      "data": {
+        "Owner": "Nina Patel",
+        "Updated": "2026-08-13"
+      },
+      "childIds": [
+        "PLAT-S-A11Y-KBD",
+        "PLAT-S-A11Y-SR"
+      ]
+    },
+    {
+      "id": "MOB-E-LOGIN",
+      "title": "Mobile login epic",
+      "subtitle": "MOB-E-LOGIN",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/MOB-E-LOGIN",
+      "data": {
+        "Owner": "Jamie Cole",
+        "Updated": "2026-08-14"
+      },
+      "childIds": [
+        "MOB-S-BIO",
+        "MOB-S-SSO",
+        "MOB-S-SESS"
+      ]
+    },
+    {
+      "id": "MOB-E-PUSH",
+      "title": "Push notifications epic",
+      "subtitle": "MOB-E-PUSH",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/MOB-E-PUSH",
+      "data": {
+        "Owner": "Jamie Cole",
+        "Updated": "2026-08-14"
+      },
+      "childIds": [
+        "MOB-S-APNS",
+        "MOB-S-FCM",
+        "MOB-S-PREF"
+      ]
+    },
+    {
+      "id": "MOB-E-SYNC",
+      "title": "Offline sync epic",
+      "subtitle": "MOB-E-SYNC",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/MOB-E-SYNC",
+      "data": {
+        "Owner": "Taylor Brooks",
+        "Updated": "2026-08-15"
+      },
+      "childIds": [
+        "MOB-S-OFF",
+        "MOB-S-CONF",
+        "MOB-S-DELTA"
+      ]
+    },
+    {
+      "id": "MOB-E-UI",
+      "title": "Android UI kit epic",
+      "subtitle": "MOB-E-UI",
+      "status": "To Do",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/MOB-E-UI",
+      "data": {
+        "Owner": "Taylor Brooks",
+        "Updated": "2026-08-15"
+      },
+      "childIds": [
+        "MOB-S-FCM",
+        "MOB-S-THEME",
+        "MOB-S-COMP"
+      ]
+    },
+    {
+      "id": "DATA-E-ING",
+      "title": "Ingest epic",
+      "subtitle": "DATA-E-ING",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/DATA-E-ING",
+      "data": {
+        "Owner": "Riley Chen",
+        "Updated": "2026-08-16"
+      },
+      "childIds": [
+        "MOB-S-DELTA",
+        "DATA-S-KAF",
+        "DATA-S-S3",
+        "DATA-S-SCHEMA"
+      ]
+    },
+    {
+      "id": "DATA-E-ETL",
+      "title": "Transform epic",
+      "subtitle": "DATA-E-ETL",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/DATA-E-ETL",
+      "data": {
+        "Owner": "Riley Chen",
+        "Updated": "2026-08-16"
+      },
+      "childIds": [
+        "DATA-S-DBT",
+        "DATA-S-QUAL",
+        "DATA-S-LINEAGE"
+      ]
+    },
+    {
+      "id": "DATA-E-RPT",
+      "title": "Reporting epic",
+      "subtitle": "DATA-E-RPT",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/DATA-E-RPT",
+      "data": {
+        "Owner": "Quinn Alvarez",
+        "Updated": "2026-08-17"
+      },
+      "childIds": [
+        "DATA-S-FIN",
+        "DATA-S-OPS",
+        "DATA-S-EXEC",
+        "SEC-S-SIEM"
+      ]
+    },
+    {
+      "id": "DATA-E-ML",
+      "title": "Scoring models epic",
+      "subtitle": "DATA-E-ML",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/DATA-E-ML",
+      "data": {
+        "Owner": "Quinn Alvarez",
+        "Updated": "2026-08-17"
+      },
+      "childIds": [
+        "DATA-S-EXEC",
+        "DATA-S-FEAT",
+        "DATA-S-SCORE"
+      ]
+    },
+    {
+      "id": "SEC-E-RBAC",
+      "title": "RBAC epic",
+      "subtitle": "SEC-E-RBAC",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/SEC-E-RBAC",
+      "data": {
+        "Owner": "Dana Okonkwo",
+        "Updated": "2026-08-18"
+      },
+      "childIds": [
+        "PLAT-S-MFA",
+        "SEC-S-ROLE",
+        "SEC-S-POL",
+        "SEC-S-GRANT"
+      ]
+    },
+    {
+      "id": "SEC-E-AUDIT",
+      "title": "Audit trail epic",
+      "subtitle": "SEC-E-AUDIT",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/SEC-E-AUDIT",
+      "data": {
+        "Owner": "Dana Okonkwo",
+        "Updated": "2026-08-18"
+      },
+      "childIds": [
+        "DATA-S-QUAL",
+        "SEC-S-LOG",
+        "SEC-S-SIEM",
+        "SEC-S-RET"
+      ]
+    },
+    {
+      "id": "SEC-E-SOC",
+      "title": "SOC 2 epic",
+      "subtitle": "SEC-E-SOC",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/SEC-E-SOC",
+      "data": {
+        "Owner": "Harper Diaz",
+        "Updated": "2026-08-19"
+      },
+      "childIds": [
+        "DATA-S-SCORE",
+        "SEC-S-CTRL",
+        "SEC-S-EVID",
+        "SEC-S-SCOPE"
+      ]
+    },
+    {
+      "id": "SEC-E-PEN",
+      "title": "Penetration tests epic",
+      "subtitle": "SEC-E-PEN",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/SEC-E-PEN",
+      "data": {
+        "Owner": "Harper Diaz",
+        "Updated": "2026-08-19"
+      },
+      "childIds": [
+        "SEC-S-SCAN",
+        "SEC-S-WEB",
+        "SEC-S-API"
+      ]
+    },
+    {
+      "id": "PLAT-S-OAUTH",
+      "title": "OAuth token service",
+      "subtitle": "PLAT-S-OAUTH",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-OAUTH",
+      "data": {
+        "Owner": "Alex Ortiz",
+        "Updated": "2026-09-01"
+      },
+      "childIds": []
+    },
+    {
+      "id": "PLAT-S-SAML",
+      "title": "SAML identity provider",
+      "subtitle": "PLAT-S-SAML",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-SAML",
+      "data": {
+        "Owner": "Alex Ortiz",
+        "Updated": "2026-09-01"
+      },
+      "childIds": []
+    },
+    {
+      "id": "PLAT-S-MFA",
+      "title": "Multi-factor challenge",
+      "subtitle": "PLAT-S-MFA",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-MFA",
+      "data": {
+        "Owner": "Dana Okonkwo",
+        "Updated": "2026-09-02"
+      },
+      "childIds": []
+    },
+    {
+      "id": "PLAT-S-RATE",
+      "title": "Gateway rate limits",
+      "subtitle": "PLAT-S-RATE",
+      "status": "Done",
+      "rollupStatus": "Done",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-RATE",
+      "data": {
+        "Owner": "Alex Ortiz",
+        "Updated": "2026-09-02"
+      },
+      "childIds": []
+    },
+    {
+      "id": "PLAT-S-ROUT",
+      "title": "Request routing rules",
+      "subtitle": "PLAT-S-ROUT",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-ROUT",
+      "data": {
+        "Owner": "Alex Ortiz",
+        "Updated": "2026-09-03"
+      },
+      "childIds": []
+    },
+    {
+      "id": "PLAT-S-RETRY",
+      "title": "Idempotent retries",
+      "subtitle": "PLAT-S-RETRY",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-RETRY",
+      "data": {
+        "Owner": "Alex Ortiz",
+        "Updated": "2026-09-03"
+      },
+      "childIds": []
+    },
+    {
+      "id": "PLAT-S-DASH",
+      "title": "Portal dashboard",
+      "subtitle": "PLAT-S-DASH",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-DASH",
+      "data": {
+        "Owner": "Nina Patel",
+        "Updated": "2026-09-04"
+      },
+      "childIds": []
+    },
+    {
+      "id": "PLAT-S-NAV",
+      "title": "Portal navigation",
+      "subtitle": "PLAT-S-NAV",
+      "status": "Done",
+      "rollupStatus": "Done",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-NAV",
+      "data": {
+        "Owner": "Nina Patel",
+        "Updated": "2026-09-04"
+      },
+      "childIds": []
+    },
+    {
+      "id": "PLAT-S-PROF",
+      "title": "Account profile",
+      "subtitle": "PLAT-S-PROF",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-PROF",
+      "data": {
+        "Owner": "Nina Patel",
+        "Updated": "2026-09-05"
+      },
+      "childIds": []
+    },
+    {
+      "id": "PLAT-S-A11Y-KBD",
+      "title": "Keyboard paths",
+      "subtitle": "PLAT-S-A11Y-KBD",
+      "status": "Done",
+      "rollupStatus": "Done",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-A11Y-KBD",
+      "data": {
+        "Owner": "Nina Patel",
+        "Updated": "2026-09-05"
+      },
+      "childIds": []
+    },
+    {
+      "id": "PLAT-S-A11Y-SR",
+      "title": "Screen reader labels",
+      "subtitle": "PLAT-S-A11Y-SR",
+      "status": "Done",
+      "rollupStatus": "Done",
+      "sourceUrl": "https://jira.example.com/browse/PLAT-S-A11Y-SR",
+      "data": {
+        "Owner": "Nina Patel",
+        "Updated": "2026-09-06"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-BIO",
+      "title": "iOS biometrics",
+      "subtitle": "MOB-S-BIO",
+      "status": "Done",
+      "rollupStatus": "Done",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-BIO",
+      "data": {
+        "Owner": "Jamie Cole",
+        "Updated": "2026-09-06"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-SSO",
+      "title": "Mobile SSO",
+      "subtitle": "MOB-S-SSO",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-SSO",
+      "data": {
+        "Owner": "Jamie Cole",
+        "Updated": "2026-09-07"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-SESS",
+      "title": "Session refresh",
+      "subtitle": "MOB-S-SESS",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-SESS",
+      "data": {
+        "Owner": "Jamie Cole",
+        "Updated": "2026-09-07"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-APNS",
+      "title": "APNS delivery",
+      "subtitle": "MOB-S-APNS",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-APNS",
+      "data": {
+        "Owner": "Jamie Cole",
+        "Updated": "2026-09-08"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-FCM",
+      "title": "FCM delivery",
+      "subtitle": "MOB-S-FCM",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-FCM",
+      "data": {
+        "Owner": "Taylor Brooks",
+        "Updated": "2026-09-08"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-PREF",
+      "title": "Notification preferences",
+      "subtitle": "MOB-S-PREF",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-PREF",
+      "data": {
+        "Owner": "Jamie Cole",
+        "Updated": "2026-09-09"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-OFF",
+      "title": "Offline queue",
+      "subtitle": "MOB-S-OFF",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-OFF",
+      "data": {
+        "Owner": "Taylor Brooks",
+        "Updated": "2026-09-09"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-CONF",
+      "title": "Conflict resolution",
+      "subtitle": "MOB-S-CONF",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-CONF",
+      "data": {
+        "Owner": "Taylor Brooks",
+        "Updated": "2026-09-10"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-DELTA",
+      "title": "Delta sync",
+      "subtitle": "MOB-S-DELTA",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-DELTA",
+      "data": {
+        "Owner": "Riley Chen",
+        "Updated": "2026-09-10"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-THEME",
+      "title": "Theme tokens",
+      "subtitle": "MOB-S-THEME",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-THEME",
+      "data": {
+        "Owner": "Taylor Brooks",
+        "Updated": "2026-09-11"
+      },
+      "childIds": []
+    },
+    {
+      "id": "MOB-S-COMP",
+      "title": "Shared components",
+      "subtitle": "MOB-S-COMP",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/MOB-S-COMP",
+      "data": {
+        "Owner": "Taylor Brooks",
+        "Updated": "2026-09-11"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-KAF",
+      "title": "Kafka ingest",
+      "subtitle": "DATA-S-KAF",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-KAF",
+      "data": {
+        "Owner": "Riley Chen",
+        "Updated": "2026-09-01"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-S3",
+      "title": "S3 landing zone",
+      "subtitle": "DATA-S-S3",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-S3",
+      "data": {
+        "Owner": "Riley Chen",
+        "Updated": "2026-09-01"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-SCHEMA",
+      "title": "Schema registry",
+      "subtitle": "DATA-S-SCHEMA",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-SCHEMA",
+      "data": {
+        "Owner": "Riley Chen",
+        "Updated": "2026-09-02"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-DBT",
+      "title": "dbt models",
+      "subtitle": "DATA-S-DBT",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-DBT",
+      "data": {
+        "Owner": "Riley Chen",
+        "Updated": "2026-09-02"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-QUAL",
+      "title": "Data quality checks",
+      "subtitle": "DATA-S-QUAL",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-QUAL",
+      "data": {
+        "Owner": "Quinn Alvarez",
+        "Updated": "2026-09-03"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-LINEAGE",
+      "title": "Column lineage",
+      "subtitle": "DATA-S-LINEAGE",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-LINEAGE",
+      "data": {
+        "Owner": "Quinn Alvarez",
+        "Updated": "2026-09-03"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-FIN",
+      "title": "Finance pack",
+      "subtitle": "DATA-S-FIN",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-FIN",
+      "data": {
+        "Owner": "Quinn Alvarez",
+        "Updated": "2026-09-04"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-OPS",
+      "title": "Ops pack",
+      "subtitle": "DATA-S-OPS",
+      "status": "Done",
+      "rollupStatus": "Done",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-OPS",
+      "data": {
+        "Owner": "Quinn Alvarez",
+        "Updated": "2026-09-04"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-EXEC",
+      "title": "Exec scorecard",
+      "subtitle": "DATA-S-EXEC",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-EXEC",
+      "data": {
+        "Owner": "Quinn Alvarez",
+        "Updated": "2026-09-05"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-FEAT",
+      "title": "Feature store",
+      "subtitle": "DATA-S-FEAT",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-FEAT",
+      "data": {
+        "Owner": "Quinn Alvarez",
+        "Updated": "2026-09-05"
+      },
+      "childIds": []
+    },
+    {
+      "id": "DATA-S-SCORE",
+      "title": "Risk scores",
+      "subtitle": "DATA-S-SCORE",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/DATA-S-SCORE",
+      "data": {
+        "Owner": "Harper Diaz",
+        "Updated": "2026-09-06"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-ROLE",
+      "title": "Role catalogue",
+      "subtitle": "SEC-S-ROLE",
+      "status": "Done",
+      "rollupStatus": "Done",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-ROLE",
+      "data": {
+        "Owner": "Dana Okonkwo",
+        "Updated": "2026-09-06"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-POL",
+      "title": "Access policies",
+      "subtitle": "SEC-S-POL",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-POL",
+      "data": {
+        "Owner": "Dana Okonkwo",
+        "Updated": "2026-09-07"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-GRANT",
+      "title": "Grant workflow",
+      "subtitle": "SEC-S-GRANT",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-GRANT",
+      "data": {
+        "Owner": "Dana Okonkwo",
+        "Updated": "2026-09-07"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-LOG",
+      "title": "Immutable logs",
+      "subtitle": "SEC-S-LOG",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-LOG",
+      "data": {
+        "Owner": "Dana Okonkwo",
+        "Updated": "2026-09-08"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-SIEM",
+      "title": "SIEM export",
+      "subtitle": "SEC-S-SIEM",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-SIEM",
+      "data": {
+        "Owner": "Quinn Alvarez",
+        "Updated": "2026-09-08"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-RET",
+      "title": "Retention rules",
+      "subtitle": "SEC-S-RET",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-RET",
+      "data": {
+        "Owner": "Dana Okonkwo",
+        "Updated": "2026-09-09"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-CTRL",
+      "title": "Control mapping",
+      "subtitle": "SEC-S-CTRL",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-CTRL",
+      "data": {
+        "Owner": "Harper Diaz",
+        "Updated": "2026-09-09"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-EVID",
+      "title": "Evidence locker",
+      "subtitle": "SEC-S-EVID",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-EVID",
+      "data": {
+        "Owner": "Harper Diaz",
+        "Updated": "2026-09-10"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-SCOPE",
+      "title": "Audit scope",
+      "subtitle": "SEC-S-SCOPE",
+      "status": "Blocked",
+      "rollupStatus": "Blocked",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-SCOPE",
+      "data": {
+        "Owner": "Harper Diaz",
+        "Updated": "2026-09-10"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-SCAN",
+      "title": "External scan",
+      "subtitle": "SEC-S-SCAN",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-SCAN",
+      "data": {
+        "Owner": "Harper Diaz",
+        "Updated": "2026-09-11"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-WEB",
+      "title": "Web app test",
+      "subtitle": "SEC-S-WEB",
+      "status": "In Progress",
+      "rollupStatus": "In Progress",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-WEB",
+      "data": {
+        "Owner": "Nina Patel",
+        "Updated": "2026-09-11"
+      },
+      "childIds": []
+    },
+    {
+      "id": "SEC-S-API",
+      "title": "API abuse test",
+      "subtitle": "SEC-S-API",
+      "status": "To Do",
+      "rollupStatus": "To Do",
+      "sourceUrl": "https://jira.example.com/browse/SEC-S-API",
+      "data": {
+        "Owner": "Alex Ortiz",
+        "Updated": "2026-09-12"
+      },
+      "childIds": []
+    }
+  ],
+  "links": [
+    {
+      "from": "PLAT",
+      "to": "PLAT-WS-API"
+    },
+    {
+      "from": "PLAT",
+      "to": "PLAT-WS-WEB"
+    },
+    {
+      "from": "MOB",
+      "to": "MOB-WS-IOS"
+    },
+    {
+      "from": "MOB",
+      "to": "MOB-WS-AND"
+    },
+    {
+      "from": "DATA",
+      "to": "DATA-WS-PIPE"
+    },
+    {
+      "from": "DATA",
+      "to": "DATA-WS-BI"
+    },
+    {
+      "from": "SEC",
+      "to": "SEC-WS-ID"
+    },
+    {
+      "from": "SEC",
+      "to": "SEC-WS-COMP"
+    },
+    {
+      "from": "PLAT-WS-API",
+      "to": "PLAT-E-AUTH"
+    },
+    {
+      "from": "PLAT-WS-API",
+      "to": "PLAT-E-GATE"
+    },
+    {
+      "from": "PLAT-WS-WEB",
+      "to": "PLAT-E-PORT"
+    },
+    {
+      "from": "PLAT-WS-WEB",
+      "to": "PLAT-E-A11Y"
+    },
+    {
+      "from": "MOB-WS-IOS",
+      "to": "MOB-E-LOGIN"
+    },
+    {
+      "from": "MOB-WS-IOS",
+      "to": "MOB-E-PUSH"
+    },
+    {
+      "from": "MOB-WS-AND",
+      "to": "MOB-E-SYNC"
+    },
+    {
+      "from": "MOB-WS-AND",
+      "to": "MOB-E-UI"
+    },
+    {
+      "from": "DATA-WS-PIPE",
+      "to": "DATA-E-ING"
+    },
+    {
+      "from": "DATA-WS-PIPE",
+      "to": "DATA-E-ETL"
+    },
+    {
+      "from": "DATA-WS-BI",
+      "to": "DATA-E-RPT"
+    },
+    {
+      "from": "DATA-WS-BI",
+      "to": "DATA-E-ML"
+    },
+    {
+      "from": "SEC-WS-ID",
+      "to": "SEC-E-RBAC"
+    },
+    {
+      "from": "SEC-WS-ID",
+      "to": "SEC-E-AUDIT"
+    },
+    {
+      "from": "SEC-WS-COMP",
+      "to": "SEC-E-SOC"
+    },
+    {
+      "from": "SEC-WS-COMP",
+      "to": "SEC-E-PEN"
+    },
+    {
+      "from": "PLAT-E-AUTH",
+      "to": "PLAT-S-OAUTH"
+    },
+    {
+      "from": "PLAT-E-AUTH",
+      "to": "PLAT-S-SAML"
+    },
+    {
+      "from": "PLAT-E-AUTH",
+      "to": "PLAT-S-MFA"
+    },
+    {
+      "from": "SEC-E-RBAC",
+      "to": "PLAT-S-MFA"
+    },
+    {
+      "from": "PLAT-E-GATE",
+      "to": "PLAT-S-RATE"
+    },
+    {
+      "from": "PLAT-E-GATE",
+      "to": "PLAT-S-ROUT"
+    },
+    {
+      "from": "PLAT-E-GATE",
+      "to": "PLAT-S-RETRY"
+    },
+    {
+      "from": "PLAT-E-PORT",
+      "to": "PLAT-S-DASH"
+    },
+    {
+      "from": "PLAT-E-PORT",
+      "to": "PLAT-S-NAV"
+    },
+    {
+      "from": "PLAT-E-PORT",
+      "to": "PLAT-S-PROF"
+    },
+    {
+      "from": "PLAT-E-A11Y",
+      "to": "PLAT-S-A11Y-KBD"
+    },
+    {
+      "from": "PLAT-E-A11Y",
+      "to": "PLAT-S-A11Y-SR"
+    },
+    {
+      "from": "MOB-E-LOGIN",
+      "to": "MOB-S-BIO"
+    },
+    {
+      "from": "MOB-E-LOGIN",
+      "to": "MOB-S-SSO"
+    },
+    {
+      "from": "PLAT-E-AUTH",
+      "to": "MOB-S-SSO"
+    },
+    {
+      "from": "MOB-E-LOGIN",
+      "to": "MOB-S-SESS"
+    },
+    {
+      "from": "MOB-E-PUSH",
+      "to": "MOB-S-APNS"
+    },
+    {
+      "from": "MOB-E-PUSH",
+      "to": "MOB-S-FCM"
+    },
+    {
+      "from": "MOB-E-UI",
+      "to": "MOB-S-FCM"
+    },
+    {
+      "from": "MOB-E-PUSH",
+      "to": "MOB-S-PREF"
+    },
+    {
+      "from": "MOB-E-SYNC",
+      "to": "MOB-S-OFF"
+    },
+    {
+      "from": "MOB-E-SYNC",
+      "to": "MOB-S-CONF"
+    },
+    {
+      "from": "MOB-E-SYNC",
+      "to": "MOB-S-DELTA"
+    },
+    {
+      "from": "DATA-E-ING",
+      "to": "MOB-S-DELTA"
+    },
+    {
+      "from": "MOB-E-UI",
+      "to": "MOB-S-THEME"
+    },
+    {
+      "from": "MOB-E-UI",
+      "to": "MOB-S-COMP"
+    },
+    {
+      "from": "DATA-E-ING",
+      "to": "DATA-S-KAF"
+    },
+    {
+      "from": "DATA-E-ING",
+      "to": "DATA-S-S3"
+    },
+    {
+      "from": "DATA-E-ING",
+      "to": "DATA-S-SCHEMA"
+    },
+    {
+      "from": "DATA-E-ETL",
+      "to": "DATA-S-DBT"
+    },
+    {
+      "from": "DATA-E-ETL",
+      "to": "DATA-S-QUAL"
+    },
+    {
+      "from": "SEC-E-AUDIT",
+      "to": "DATA-S-QUAL"
+    },
+    {
+      "from": "DATA-E-ETL",
+      "to": "DATA-S-LINEAGE"
+    },
+    {
+      "from": "DATA-E-RPT",
+      "to": "DATA-S-FIN"
+    },
+    {
+      "from": "DATA-E-RPT",
+      "to": "DATA-S-OPS"
+    },
+    {
+      "from": "DATA-E-RPT",
+      "to": "DATA-S-EXEC"
+    },
+    {
+      "from": "DATA-E-ML",
+      "to": "DATA-S-EXEC"
+    },
+    {
+      "from": "DATA-E-ML",
+      "to": "DATA-S-FEAT"
+    },
+    {
+      "from": "DATA-E-ML",
+      "to": "DATA-S-SCORE"
+    },
+    {
+      "from": "SEC-E-SOC",
+      "to": "DATA-S-SCORE"
+    },
+    {
+      "from": "SEC-E-RBAC",
+      "to": "SEC-S-ROLE"
+    },
+    {
+      "from": "SEC-E-RBAC",
+      "to": "SEC-S-POL"
+    },
+    {
+      "from": "SEC-E-RBAC",
+      "to": "SEC-S-GRANT"
+    },
+    {
+      "from": "SEC-E-AUDIT",
+      "to": "SEC-S-LOG"
+    },
+    {
+      "from": "SEC-E-AUDIT",
+      "to": "SEC-S-SIEM"
+    },
+    {
+      "from": "DATA-E-RPT",
+      "to": "SEC-S-SIEM"
+    },
+    {
+      "from": "SEC-E-AUDIT",
+      "to": "SEC-S-RET"
+    },
+    {
+      "from": "SEC-E-SOC",
+      "to": "SEC-S-CTRL"
+    },
+    {
+      "from": "SEC-E-SOC",
+      "to": "SEC-S-EVID"
+    },
+    {
+      "from": "SEC-E-SOC",
+      "to": "SEC-S-SCOPE"
+    },
+    {
+      "from": "SEC-E-PEN",
+      "to": "SEC-S-SCAN"
+    },
+    {
+      "from": "SEC-E-PEN",
+      "to": "SEC-S-WEB"
+    },
+    {
+      "from": "PLAT-E-PORT",
+      "to": "SEC-S-WEB"
+    },
+    {
+      "from": "SEC-E-PEN",
+      "to": "SEC-S-API"
+    },
+    {
+      "from": "PLAT-E-GATE",
+      "to": "SEC-S-API"
+    }
+  ]
+}

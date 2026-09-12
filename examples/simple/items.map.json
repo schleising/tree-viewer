@@ -1,0 +1,15 @@
+{
+  "id": "Key",
+  "title": "Summary",
+  "status": "Status",
+  "links": "Parent",
+  "data": ["Owner", "Updated"],
+  "sourceUrl": "URL",
+  "statuses": [
+    { "id": "Done", "label": "Done", "color": "#2e7d32", "severity": 0 },
+    { "id": "To Do", "label": "To Do", "color": "#1565c0", "severity": 1 },
+    { "id": "In Progress", "label": "In Progress", "color": "#f9a825", "severity": 2 },
+    { "id": "Blocked", "label": "Blocked", "color": "#c62828", "severity": 3 }
+  ],
+  "statusFallback": "Blocked"
+}

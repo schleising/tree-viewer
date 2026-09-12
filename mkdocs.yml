@@ -1,0 +1,20 @@
+site_name: Tree Viewer
+site_description: Hierarchical CSV to JSON converter and status tree viewer
+
+nav:
+  - Home: index.md
+  - Design: DESIGN.md
+  - API: api.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: false
+
+theme:
+  name: material
