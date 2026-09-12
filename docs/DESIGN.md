@@ -490,6 +490,8 @@ tree-viewer/
       items.csv
       items.map.json     # saved column map for non-interactive tests
       graph.json         # checked-in golden file
+    four-level/
+    toaster-bom/
   data/                  # local inputs; gitignored except examples
 ```
 

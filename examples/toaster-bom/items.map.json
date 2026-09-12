@@ -1,0 +1,14 @@
+{
+  "id": "Key",
+  "title": "Summary",
+  "status": "Status",
+  "links": "Parent",
+  "data": ["Owner", "Updated"],
+  "sourceUrl": "URL",
+  "statuses": [
+    { "id": "Released", "label": "Released", "color": "#2e7d32", "severity": 0 },
+    { "id": "In Work", "label": "In Work", "color": "#1565c0", "severity": 1 },
+    { "id": "Pending Change", "label": "Pending Change", "color": "#f9a825", "severity": 2 }
+  ],
+  "statusFallback": "In Work"
+}

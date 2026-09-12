@@ -7,6 +7,8 @@ SIMPLE_CSV = ROOT / "examples" / "simple" / "items.csv"
 SIMPLE_MAP = ROOT / "examples" / "simple" / "items.map.json"
 FOUR_LEVEL_CSV = ROOT / "examples" / "four-level" / "items.csv"
 FOUR_LEVEL_MAP = ROOT / "examples" / "four-level" / "items.map.json"
+TOASTER_CSV = ROOT / "examples" / "toaster-bom" / "items.csv"
+TOASTER_MAP = ROOT / "examples" / "toaster-bom" / "items.map.json"
 
 
 class ScriptedPrompt:

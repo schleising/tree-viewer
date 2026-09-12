@@ -1,6 +1,13 @@
 """Tests for worst-wins status roll-up."""
 
-from tests.conftest import FOUR_LEVEL_CSV, FOUR_LEVEL_MAP, SIMPLE_CSV, SIMPLE_MAP
+from tests.conftest import (
+    FOUR_LEVEL_CSV,
+    FOUR_LEVEL_MAP,
+    SIMPLE_CSV,
+    SIMPLE_MAP,
+    TOASTER_CSV,
+    TOASTER_MAP,
+)
 from treeviewer.convert import convert_csv
 from treeviewer.mapping import load_column_map
 from treeviewer.model import DocumentMeta, GraphDocument, Link, Node, Status
@@ -85,3 +92,23 @@ def test_four_level_example_has_four_roots() -> None:
     by_id = {node.id: node for node in document.nodes}
     assert by_id["DATA"].rollup_status == "Blocked"
     assert by_id["PLAT-E-A11Y"].rollup_status == "Done"
+
+
+def test_toaster_bom_example() -> None:
+    mapping = load_column_map(TOASTER_MAP)
+    document = convert_csv(TOASTER_CSV, mapping, title="Toaster BOM")
+    assert [status.id for status in document.statuses] == [
+        "Released",
+        "In Work",
+        "Pending Change",
+    ]
+    child_ids = {link.to_id for link in document.links}
+    roots = [node.id for node in document.nodes if node.id not in child_ids]
+    assert roots == ["TST-1000"]
+    by_id = {node.id: node for node in document.nodes}
+    assert by_id["TST-1000"].status == "In Work"
+    assert by_id["TST-1000"].rollup_status == "Pending Change"
+    assert by_id["CRG-400"].rollup_status == "Released"
+    assert by_id["FAST-M3"].child_ids == []
+    parents = {link.from_id for link in document.links if link.to_id == "FAST-M3"}
+    assert parents == {"HSG-210", "HTG-320", "CRG-430"}

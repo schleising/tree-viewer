@@ -42,4 +42,4 @@ python -m pip install -e ".[dev,docs]"
 python -m pytest
 ```
 
-Example data lives in `examples/simple` and `examples/four-level`.
+Example data lives in `examples/simple`, `examples/four-level`, and `examples/toaster-bom`.

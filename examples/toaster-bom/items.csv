@@ -1,0 +1,39 @@
+Key,Summary,Status,Parent,Owner,Updated,URL
+TST-1000,2-slice toaster,In Work,,Maya Cole,2026-09-01,https://plm.example.com/item/TST-1000
+HSG-200,Housing assembly,Released,TST-1000,Maya Cole,2026-08-12,https://plm.example.com/item/HSG-200
+HTG-300,Heating assembly,In Work,TST-1000,Owen Park,2026-08-20,https://plm.example.com/item/HTG-300
+CRG-400,Carriage assembly,Released,TST-1000,Maya Cole,2026-07-30,https://plm.example.com/item/CRG-400
+CTL-500,Control assembly,Pending Change,TST-1000,Priya Shah,2026-09-04,https://plm.example.com/item/CTL-500
+PWR-600,Power assembly,Released,TST-1000,Owen Park,2026-07-18,https://plm.example.com/item/PWR-600
+HSG-210,Outer shell,Released,HSG-200,Maya Cole,2026-08-10,https://plm.example.com/item/HSG-210
+HSG-220,Carriage lever,In Work,HSG-200,Maya Cole,2026-08-28,https://plm.example.com/item/HSG-220
+HTG-310,Element pair,In Work,HTG-300,Owen Park,2026-08-18,https://plm.example.com/item/HTG-310
+HTG-320,Reflector pan,Released,HTG-300,Owen Park,2026-07-22,https://plm.example.com/item/HTG-320
+HTG-330,Mica insulation wrap,Pending Change,HTG-300,Owen Park,2026-09-02,https://plm.example.com/item/HTG-330
+CRG-410,Bread rack,Released,CRG-400,Maya Cole,2026-07-15,https://plm.example.com/item/CRG-410
+CRG-420,Lift spring set,Released,CRG-400,Maya Cole,2026-07-15,https://plm.example.com/item/CRG-420
+CRG-430,Guide rails,Released,CRG-400,Maya Cole,2026-07-16,https://plm.example.com/item/CRG-430
+CTL-510,Timer PCB,Pending Change,CTL-500,Priya Shah,2026-09-04,https://plm.example.com/item/CTL-510
+CTL-520,Rotary browning knob,In Work,CTL-500,Priya Shah,2026-08-30,https://plm.example.com/item/CTL-520
+CTL-530,Cancel switch,Released,CTL-500,Priya Shah,2026-07-08,https://plm.example.com/item/CTL-530
+PWR-610,Cordset,Released,PWR-600,Owen Park,2026-06-20,https://plm.example.com/item/PWR-610
+PWR-620,Strain relief,Released,PWR-600,Owen Park,2026-06-20,https://plm.example.com/item/PWR-620
+PWR-630,Fuse 5 A,Released,PWR-600,Owen Park,2026-06-21,https://plm.example.com/item/PWR-630
+HSG-211,Side panel LH,Released,HSG-210,Maya Cole,2026-08-02,https://plm.example.com/item/HSG-211
+HSG-212,Side panel RH,Released,HSG-210,Maya Cole,2026-08-02,https://plm.example.com/item/HSG-212
+HSG-213,Top cover with vents,Pending Change,HSG-210,Maya Cole,2026-09-03,https://plm.example.com/item/HSG-213
+HSG-214,Crumb tray,Released,HSG-210,Maya Cole,2026-07-11,https://plm.example.com/item/HSG-214
+HSG-221,Lever arm,In Work,HSG-220,Maya Cole,2026-08-28,https://plm.example.com/item/HSG-221
+HSG-222,Lever knob cap,Released,HSG-220,Maya Cole,2026-07-19,https://plm.example.com/item/HSG-222
+HTG-311,Heating element LH,In Work,HTG-310,Owen Park,2026-08-18,https://plm.example.com/item/HTG-311
+HTG-312,Heating element RH,In Work,HTG-310,Owen Park,2026-08-18,https://plm.example.com/item/HTG-312
+HTG-313,Element terminal clip,Released,HTG-310,Owen Park,2026-07-09,https://plm.example.com/item/HTG-313
+CRG-421,Lift spring LH,Released,CRG-420,Maya Cole,2026-07-14,https://plm.example.com/item/CRG-421
+CRG-422,Lift spring RH,Released,CRG-420,Maya Cole,2026-07-14,https://plm.example.com/item/CRG-422
+CTL-511,Timer microcontroller,Pending Change,CTL-510,Priya Shah,2026-09-04,https://plm.example.com/item/CTL-511
+CTL-512,16 MHz crystal,Released,CTL-510,Priya Shah,2026-06-30,https://plm.example.com/item/CTL-512
+CTL-521,Knob insert,In Work,CTL-520,Priya Shah,2026-08-30,https://plm.example.com/item/CTL-521
+PWR-611,C13 connector,Released,PWR-610,Owen Park,2026-06-18,https://plm.example.com/item/PWR-611
+PWR-612,2 m PVC flex,Released,PWR-610,Owen Park,2026-06-18,https://plm.example.com/item/PWR-612
+FAST-M3,M3x8 machine screw,Released,HSG-210;HTG-320;CRG-430,Lee Nguyen,2026-05-12,https://plm.example.com/item/FAST-M3
+FAST-CLIP,Cable clip,Released,PWR-600;HSG-210,Lee Nguyen,2026-05-12,https://plm.example.com/item/FAST-CLIP
